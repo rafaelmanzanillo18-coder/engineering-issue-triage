@@ -5,7 +5,7 @@ from pathlib import Path
 
 RULES = (
     ("Critical", ("smoke", "fire", "electric shock")),
-    ("High", ("communication lost", "power failure", "overvoltage")),
+    ("High", ("communication lost", "power failure", "overvoltage", "overtemperature")),
     ("Medium", ("timeout", "intermittent", "unexpected reset")),
 )
 

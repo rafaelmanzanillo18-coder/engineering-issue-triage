@@ -13,6 +13,9 @@ class TestTriage(unittest.TestCase):
     def test_high(self):
         self.assertEqual(classify("Communication lost"), "High")
 
+    def test_overtemperature_high(self):
+        self.assertEqual(classify("Overtemperature detected during simulated testing"), "High")
+
     def test_default_low(self):
         self.assertEqual(classify("Cosmetic label issue"), "Low")
 
