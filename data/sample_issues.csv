@@ -6,3 +6,4 @@ ISS-004,Cosmetic label issue
 ISS-005,Unexpected reset during test sequence
 ISS-006,Communication lost during simulated rack testing
 ISS-007,Overtemperature detected during simulated testing
+ISS-008,

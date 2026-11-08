@@ -30,6 +30,10 @@ class TestTriage(unittest.TestCase):
             self.assertEqual(row["suggested_priority"], "Medium")
             self.assertEqual(row["review_status"], "Needs human review")
 
+    def test_empty_description(self):
+        self.assertEqual(classify(""), "Needs Information")
+        self.assertEqual(classify("   "), "Needs Information")
+
 
 if __name__ == "__main__":
     unittest.main()

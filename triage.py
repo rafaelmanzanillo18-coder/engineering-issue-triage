@@ -12,7 +12,11 @@ RULES = (
 
 def classify(description: str) -> str:
     """Suggest a priority from illustrative keywords; human review is required."""
-    text = description.lower()
+    text = description.strip().lower()
+
+    if not text:
+        return "Needs Information"
+
     for priority, keywords in RULES:
         if any(keyword in text for keyword in keywords):
             return priority
