@@ -1,0 +1,6 @@
+issue_id,description
+ISS-001,Smoke detected during a simulated test
+ISS-002,Communication lost while reading telemetry
+ISS-003,Timeout during monitoring
+ISS-004,Cosmetic label issue
+ISS-005,Unexpected reset during test sequence
