@@ -34,6 +34,22 @@ class TestTriage(unittest.TestCase):
         self.assertEqual(classify(""), "Needs Information")
         self.assertEqual(classify("   "), "Needs Information")
 
+    def test_missing_description_column(self):
+        with tempfile.TemporaryDirectory() as folder:
+            source = Path(folder) / "invalid_input.csv"
+            output = Path(folder) / "output.csv"
+
+            source.write_text(
+                "issue_id,problem\n"
+                "ISS-009,Communication lost\n",
+                encoding="utf-8"
+            )
+
+            with self.assertRaises(ValueError):
+                process(str(source), str(output))
+
+            self.assertFalse(output.exists())
+
 
 if __name__ == "__main__":
     unittest.main()
